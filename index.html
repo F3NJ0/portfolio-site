@@ -6,7 +6,7 @@
     <title>Fenja Nolting</title>
     <meta name="description" content="Fenja Nolting is a web developer, yoga teacher, and PhD student.">
     <meta name="keywords" content="Fenja Nolting, Web Developer">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="img/logo_fenja_nolting.png">
     <link rel="stylesheet" type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
@@ -19,28 +19,39 @@
   </head>
 
   <body>
-    <header class="page-header">
-      <a href="index.html">
-        <img src="img/logo_fenja_nolting.png" class="page-header__logo page-header__item"
-          alt="Personal logo of Fenja Nolting, the letters F and N in capital letters">
-      </a>
-      <nav class="page-header__item">
-        <ul role="menubar" class="navigation-list">
-          <li role="presentation">
-            <a href="#hero" role="menuitem" class="navigation-list__item navigation-list__item--active">HOME</a>
+    <header class="header">
+      <nav class="navbar">
+        <!-- Logo -->
+        <a href="#hero">
+          <img src="img/logo_fenja_nolting.png" class="nav-logo"
+            alt="Personal logo of Fenja Nolting, the letters F and N in capital letters">
+        </a>
+
+        <!-- Navigation Links -->
+        <ul role="menubar" class="nav-menu">
+          <li role="presentation" class="nav-item">
+            <a href="#hero" role="menuitem" class="nav-link">HOME</a>
           </li>
-          <li role="presentation">
-            <a href="#about" role="menuitem" class="navigation-list__item">ABOUT</a>
+          <li role="presentation" class="nav-item">
+            <a href="#about" role="menuitem" class="nav-link">ABOUT</a>
           </li>
-          <li role="presentation">
-            <a href="#projects" role="menuitem" class="navigation-list__item">PROJECTS</a>
+          <li role="presentation" class="nav-item">
+            <a href="#projects" role="menuitem" class="nav-link">PROJECTS</a>
           </li>
-          <li role="presentation">
-            <a href="#contact" role="menuitem" class="navigation-list__item">CONTACT</a>
+          <li role="presentation" class="nav-item">
+            <a href="#contact" role="menuitem" class="nav-link">CONTACT</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <button><a href="files/cv.pdf" target="_blank">CV</a></button>
           </li>
         </ul>
+        <!-- Burger Menu -->
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
       </nav>
-      <button><a href="files/cv.pdf" target="_blank">CV</a></button>
     </header>
 
 
@@ -54,7 +65,7 @@
           Web Developer. Yoga Teacher. Free Spirit.
           <br>
         </h2>
-        <div class="text-wrapper">
+        <div class="intro-text-wrapper">
           <p>
             I'm a web developer creating beautiful and engaging digital
             experiences in Berlin, Germany. Feel free to check out some of my previous work to see if I might be a fit
@@ -70,7 +81,7 @@
       <div class="section" id="about">
         <h2 class="section-heading">About Me</h2>
         <div class="about-me-details">
-          <div>
+          <div class="about-me-text">
             <p>
               Hi! I'm Fenja and I love creating digital solutions for the web! I've originally started off my
               career as Product Manager, but soon realized that I'm more interested in the tech side. So I
@@ -94,19 +105,21 @@
             </ul>
           </div>
           <div class="profile-image-border">
-            <img src="img/Fenja.png" alt="Portrait of Fenja Nolting">
+            <img src="img/Fenja.png" alt="Portrait of Fenja Nolting" class="profile-image">
           </div>
         </div>
       </div>
 
       <!-- Projects -->
       <div class="section" id="projects">
-        <h2 class="section-heading">Some Things I've built</h2>
+        <h2 class="section-heading">Prior Projects</h2>
         <ul class="project-list">
           <li role="listitem">
             <div class="project-right-align">
-              <img src="img/Angular_mac_iphone.png" alt="Screenshot of application on MacBook and iPhone"
-                class="project-image">
+              <div class="project-image-wrapper">
+                <img src="img/Angular_mac_iphone.png" alt="Screenshot of application on MacBook and iPhone"
+                  class="project-image">
+              </div>
               <div class="project-content">
                 <p class="project-overline">Featured Project</p>
                 <h3 class="project-title">Angular: Movies App</h3>
@@ -266,51 +279,73 @@
             </li>
           </ul>
         </div>
+      </div>
 
-        <!-- Contact -->
-        <div class="section flex-center" id="contact">
-          <h2 class="section-heading">Get in touch!</h2>
-          <p>
-            I'm always looking for new challenges, so reach out if you think I could be a fit for your current
-            project!
-          </p>
-          <button>
-            <a href="mailto:fenjanolting@gmail.com">
-              Say hi!
+      <!-- Contact -->
+      <div class="section flex-center" id="contact">
+        <h2 class="section-heading">Get in touch!</h2>
+        <p>
+          I'm always looking for new challenges, so reach out if you think I could be a fit for your current
+          project!
+        </p>
+        <button>
+          <a href="mailto:fenjanolting@gmail.com">
+            Say hi!
+          </a>
+        </button>
+        <ul class="social-media-list">
+
+          <!-- Github logo -->
+          <li role="listitem">
+            <a href="https://github.com/F3NJ0" target="_blank">
+              <img src="img/github_icon_white.png" alt="Github logo" class="social-media__item">
             </a>
-          </button>
-          <ul class="social-media-list">
+          </li>
 
-            <!-- Github logo -->
-            <li role="listitem">
-              <a href="https://github.com/F3NJ0" target="_blank">
-                <img src="img/github_icon_white.png" alt="Github logo" class="social-media__item">
-              </a>
-            </li>
+          <!-- Linkedin logo -->
+          <li role="listitem">
+            <a href="https://www.linkedin.com/in/fenja-nolting-43781b130" target="_blank">
+              <img src="img/linkedin_icon_white.png" alt="LinkedIn logo" class="social-media__item">
+            </a>
+          </li>
 
-            <!-- Linkedin logo -->
-            <li role="listitem">
-              <a href="https://www.linkedin.com/in/fenja-nolting-43781b130" target="_blank">
-                <img src="img/linkedin_icon_white.png" alt="LinkedIn logo" class="social-media__item">
-              </a>
-            </li>
-
-            <!-- Medium logo -->
-            <li role="listitem">
-              <a href="https://medium.com/@fenjanolting_65327" target="_blank">
-                <img src="img/medium_icon_white.png" alt="Medium logo" class="social-media__item">
-              </a>
-            </li>
-          </ul>
-        </div>
+          <!-- Medium logo -->
+          <li role="listitem">
+            <a href="https://medium.com/@fenjanolting_65327" target="_blank">
+              <img src="img/medium_icon_white.png" alt="Medium logo" class="social-media__item">
+            </a>
+          </li>
+        </ul>
+      </div>
 
     </main>
 
 
     <footer class="page-footer flex-center">
-      <p class="p__italic">This page was created and designed by Fenja Nolting.</p>
+      <p>This page was created and designed by Fenja Nolting.</p>
     </footer>
     </div>
+    <!-- Burger Menu Logic -->
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+
+      hamburger.addEventListener("click", mobileMenu);
+
+      function mobileMenu() {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      }
+
+      const navLink = document.querySelectorAll(".nav-link");
+
+      navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+      function closeMenu() {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+      }
+    </script>
   </body>
 
 </html>
