@@ -70,10 +70,80 @@ button a {
 }
 
 .fade-in-element {
-    animation: fadeIn 1s ease 0s 1 normal forwards;
+    animation: fadeIn 1s ease 0s 1 normal both;
+    -webkit-animation: fadeIn 1s ease 0s 1 normal both;
+    -moz-animation: fadeIn 1s ease 0s 1 normal both;
+    -o-animation: fadeIn 1s ease 0s 1 normal both;
+    -ms-animation: fadeIn 1s ease 0s 1 normal both;
+
+
 }
 
 @keyframes fadeIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: rotateX(-100deg);
+        transform: rotateX(-100deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: rotateX(-100deg);
+        transform: rotateX(-100deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: rotateX(-100deg);
+        transform-origin: top;
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg);
+        transform-origin: top;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: rotateX(-100deg);
+        transform-origin: top;
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg);
+        transform-origin: top;
+    }
+}
+
+@-ms-keyframes fadeIn {
     0% {
         opacity: 0;
         transform: rotateX(-100deg);
@@ -95,6 +165,7 @@ button a {
     z-index: 1;
     top: 0;
     width: 100%;
+    transition: top 0.3s;
 }
 
 .navbar {

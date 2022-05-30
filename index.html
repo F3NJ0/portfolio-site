@@ -23,25 +23,25 @@
       <nav class="navbar">
         <!-- Logo -->
         <a href="#hero">
-          <img src="img/logo_fenja_nolting.png" class="nav-logo"
+          <img src="img/logo_fenja_nolting.png" class="nav-logo fade-in-element"
             alt="Personal logo of Fenja Nolting, the letters F and N in capital letters">
         </a>
 
         <!-- Navigation Links -->
         <ul role="menubar" class="nav-menu">
-          <li role="presentation" class="nav-item">
+          <li role="presentation" class="nav-item fade-in-element" style="animation-delay: 100ms;">
             <a href="#hero" role="menuitem" class="nav-link">HOME</a>
           </li>
-          <li role="presentation" class="nav-item">
+          <li role="presentation" class="nav-item fade-in-element" style="animation-delay: 150ms;">
             <a href="#about" role="menuitem" class="nav-link">ABOUT</a>
           </li>
-          <li role="presentation" class="nav-item">
+          <li role="presentation" class="nav-item fade-in-element" style="animation-delay: 200ms;">
             <a href="#projects" role="menuitem" class="nav-link">PROJECTS</a>
           </li>
-          <li role="presentation" class="nav-item">
+          <li role="presentation" class="nav-item fade-in-element" style="animation-delay: 250ms;">
             <a href="#contact" role="menuitem" class="nav-link">CONTACT</a>
           </li>
-          <li role="presentation" class="nav-item">
+          <li role="presentation" class="nav-item fade-in-element" style="animation-delay: 300ms;">
             <button><a href="files/cv.pdf" target="_blank">CV</a></button>
           </li>
         </ul>
@@ -59,26 +59,26 @@
 
       <!-- Profile -->
       <div class="section" id="hero">
-        <h3 class="tagline fade-in-element">Hi, my name is</h3>
-        <h1 class="big-heading fade-in-element" style="animation-delay: 100ms;">Fenja Nolting.</h1>
-        <h2 class="big-heading fade-in-element" style="animation-delay: 200ms;">
+        <h3 class="tagline fade-in-element" style="animation-delay: 400ms;">Hi, my name is</h3>
+        <h1 class="big-heading fade-in-element" style="animation-delay: 500ms;">Fenja Nolting.</h1>
+        <h2 class="big-heading fade-in-element" style="animation-delay: 600ms;">
           Web Developer. Yoga Teacher. Free Spirit.
           <br>
         </h2>
-        <div class="intro-text-wrapper fade-in-element" style="animation-delay: 300ms;">
+        <div class="intro-text-wrapper fade-in-element" style="animation-delay: 700ms;">
           <p>
             I'm a web developer creating beautiful and engaging digital
             experiences in Berlin, Germany. Feel free to check out some of my previous work to see if I might be a fit
             for your team!
           </p>
         </div>
-        <button class="fade-in-element" style="animation-delay: 400ms;">
+        <button class="fade-in-element" style="animation-delay: 800ms;">
           <a href="https://github.com/F3NJ0" class="code-link" target="_blank">Check out my code!</a>
         </button>
       </div>
 
       <!-- About me -->
-      <div class="section" id="about">
+      <div class="section before-scroll" id="about">
         <h2 class="section-heading">About Me</h2>
         <div class="about-me-details">
           <div class="about-me-element">
@@ -326,8 +326,9 @@
       <p>This page was created and designed by Fenja Nolting.</p>
     </footer>
     </div>
-    <!-- Burger Menu Logic -->
+    <!-- JavaScript -->
     <script>
+      /** Show / Hide Burger Menu **/
       const hamburger = document.querySelector(".hamburger");
       const navMenu = document.querySelector(".nav-menu");
 
@@ -346,6 +347,20 @@
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
       }
+
+      /** Show / Hide Header **/
+      var lastScrollTop;
+      header = document.querySelector('.header');
+      window.addEventListener('scroll', function () {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+          header.style.top = '-80px';
+        }
+        else {
+          header.style.top = '0';
+        }
+        lastScrollTop = scrollTop;
+      });
     </script>
   </body>
 
