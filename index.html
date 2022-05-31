@@ -42,7 +42,7 @@
             <a href="#contact" role="menuitem" class="nav-link">CONTACT</a>
           </li>
           <li role="presentation" class="nav-item fade-in-element" style="animation-delay: 300ms;">
-            <button><a href="files/cv.pdf" target="_blank">CV</a></button>
+            <a href="files/cv.pdf" target="_blank" class="button"><span class="button-text">CV</span></a>
           </li>
         </ul>
         <!-- Burger Menu -->
@@ -58,7 +58,7 @@
     <main>
 
       <!-- Profile -->
-      <div class="section" id="hero">
+      <section id="hero">
         <h3 class="tagline fade-in-element" style="animation-delay: 400ms;">Hi, my name is</h3>
         <h1 class="big-heading fade-in-element" style="animation-delay: 500ms;">Fenja Nolting.</h1>
         <h2 class="big-heading fade-in-element" style="animation-delay: 600ms;">
@@ -72,13 +72,12 @@
             for your team!
           </p>
         </div>
-        <button class="fade-in-element" style="animation-delay: 800ms;">
-          <a href="https://github.com/F3NJ0" class="code-link" target="_blank">Check out my code!</a>
-        </button>
-      </div>
+        <a href="https://github.com/F3NJ0" class="button fade-in-element" style="animation-delay: 800ms;"
+          target="_blank"><span class="button-text">Check out my code!</span></a>
+      </section>
 
       <!-- About me -->
-      <div class="section before-scroll" id="about">
+      <section class="reveal" id="about">
         <h2 class="section-heading">About Me</h2>
         <div class="about-me-details">
           <div class="about-me-element">
@@ -104,21 +103,23 @@
               <li role="listitem">MongoDB</li>
             </ul>
           </div>
-          <div class="profile-image-border">
+          <div class="profile-image-wrapper">
             <img src="img/Fenja.png" alt="Portrait of Fenja Nolting" class="profile-image">
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- Projects -->
-      <div class="section" id="projects">
+      <section class="reveal" id="projects">
         <h2 class="section-heading">Prior Projects</h2>
         <ul class="project-list">
           <li role="listitem">
             <div class="project-right-align">
               <div class="project-image-wrapper">
-                <img src="img/Angular_mac_iphone.png" alt="Screenshot of application on MacBook and iPhone"
-                  class="project-image">
+                <a href="https://f3nj0.github.io/myFlix-Angular-client/" target="_blank">
+                  <img src="img/Angular_mac_iphone.png" alt="Screenshot of application on MacBook and iPhone"
+                    class="project-image">
+                </a>
               </div>
               <div class="project-content">
                 <p class="project-overline">Featured Project</p>
@@ -223,11 +224,12 @@
             </div>
           </li>
         </ul>
-        <div class="other-projects flex-center">
+        <div class="reveal other-projects flex-center">
           <h2>Other noteworthy projects</h2>
 
 
           <ul class="other-project-list">
+
             <li role="listitem" class="other-project-list__item">
               <div class="project-inner">
                 <h2>Pokédex App</h2>
@@ -244,6 +246,7 @@
                 </div>
               </div>
             </li>
+
             <li role="listitem" class="other-project-list__item">
               <div class="project-inner">
                 <h2>Simple To Do List App</h2>
@@ -260,6 +263,7 @@
                 </div>
               </div>
             </li>
+
             <li role="listitem" class="other-project-list__item">
               <div class="project-inner">
                 <h2>PWA: Meet app</h2>
@@ -278,22 +282,20 @@
                 </div>
               </div>
             </li>
+
           </ul>
         </div>
-      </div>
+      </section>
 
       <!-- Contact -->
-      <div class="section flex-center" id="contact">
+      <section class="reveal flex-center" id="contact">
         <h2 class="section-heading">Get in touch!</h2>
         <p>
           I'm always looking for new challenges, so reach out if you think I could be a fit for your current
           project!
         </p>
-        <button>
-          <a href="mailto:fenjanolting@gmail.com">
-            Say hi!
-          </a>
-        </button>
+        <a href="mailto:fenjanolting@gmail.com" class="button" target="_blank"><span class="button-text">Say
+            hi!</span></a>
         <ul class="social-media-list">
 
           <!-- Github logo -->
@@ -317,7 +319,7 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
 
     </main>
 
@@ -326,42 +328,7 @@
       <p>This page was created and designed by Fenja Nolting.</p>
     </footer>
     </div>
-    <!-- JavaScript -->
-    <script>
-      /** Show / Hide Burger Menu **/
-      const hamburger = document.querySelector(".hamburger");
-      const navMenu = document.querySelector(".nav-menu");
-
-      hamburger.addEventListener("click", mobileMenu);
-
-      function mobileMenu() {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
-      }
-
-      const navLink = document.querySelectorAll(".nav-link");
-
-      navLink.forEach(n => n.addEventListener("click", closeMenu));
-
-      function closeMenu() {
-        hamburger.classList.remove("active");
-        navMenu.classList.remove("active");
-      }
-
-      /** Show / Hide Header **/
-      var lastScrollTop;
-      header = document.querySelector('.header');
-      window.addEventListener('scroll', function () {
-        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop) {
-          header.style.top = '-80px';
-        }
-        else {
-          header.style.top = '0';
-        }
-        lastScrollTop = scrollTop;
-      });
-    </script>
+    <script src="js/scripts.js"></script>
   </body>
 
 </html>

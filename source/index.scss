@@ -18,6 +18,7 @@ $fz-heading: 56px;
 $transition: all 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
 $border-radius: 3px;
 $margin-bottom: 25px;
+$header-height: 80px;
 
 
 /*** GENERAL ***/
@@ -45,28 +46,176 @@ a {
     text-decoration: none;
 }
 
-button {
+.button {
+    display: inline-block;
+    text-align: center;
+    min-width: 100px;
+    padding: 0.75rem 1rem;
     border: 1px solid $color-highlight;
     border-radius: $border-radius;
-    padding: 0.75rem 1rem;
-    min-width: 100px;
-    max-height: 40px;
     background-color: transparent;
     line-height: 1;
     cursor: pointer;
     font-size: $fz-small;
-}
-
-button:hover,
-button:focus {
-    background-color: rgba(252, 163, 17, 0.2);
-}
-
-button a {
     font-family: $secondary-font;
     color: $color-highlight;
     font-weight: $font-weight-light;
     position: relative;
+}
+
+.button:hover,
+.button:focus {
+    background-color: rgba(252, 163, 17, 0.2);
+}
+
+.button-text {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+/*** HEADER ***/
+.header {
+    overflow: hidden;
+    height: $header-height;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    transition: top 0.2s ease-in-out;
+}
+
+.nav-hide {
+    top: -$header-height;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.nav-logo {
+    max-width: 60px;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: $color-secondary;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+}
+
+.nav-item {
+    margin-left: 3rem;
+}
+
+.nav-link {
+    color: $color-secondary;
+    font-weight: $font-weight-medium;
+}
+
+.nav-link:hover {
+    color: $color-highlight;
+}
+
+/*** MAIN ***/
+main {
+    margin: $header-height auto;
+    width: 100%;
+    padding: 0 10vw;
+    min-height: 100vh;
+}
+
+section {
+    padding: 15vh 0;
+    margin: 0px auto;
+    max-width: 1000px;
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 2s all ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.1;
+    font-weight: $font-weight-bold;
+    margin: 0px 0px 10px;
+}
+
+
+h1 {
+    color: $color-secondary
+}
+
+
+.big-heading {
+    font-size: $fz-heading;
+}
+
+.section-heading {
+    font-size: $fz-large;
+    color: $color-highlight;
+}
+
+.tagline,
+.project-overline,
+.highlight {
+    font-family: $secondary-font;
+    color: $color-highlight;
+    line-height: 1.6;
+    font-size: $fz-medium;
+}
+
+.project-overline {
+    font-size: $fz-small;
+}
+
+p {
+    line-height: 1.6;
+    font-size: $fz-small;
+}
+
+
+/* Hero */
+#hero {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 0px;
+}
+
+.intro-text-wrapper {
+    text-align: left;
+    max-width: 540px;
+    margin-bottom: $margin-bottom
 }
 
 .fade-in-element {
@@ -155,134 +304,6 @@ button a {
         transform: rotateX(0deg);
         transform-origin: top;
     }
-}
-
-
-/*** HEADER ***/
-.header {
-    overflow: hidden;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    width: 100%;
-    transition: top 0.3s;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-}
-
-.nav-logo {
-    max-width: 60px;
-}
-
-.hamburger {
-    display: none;
-}
-
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: $color-secondary;
-}
-
-.nav-menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px;
-}
-
-.nav-item {
-    margin-left: 3rem;
-}
-
-.nav-link {
-    color: $color-secondary;
-    font-weight: $font-weight-medium;
-}
-
-.nav-link:hover {
-    color: $color-highlight;
-}
-
-/*** MAIN ***/
-main {
-    margin: 30px auto;
-    width: 100%;
-    padding: 0 10vw;
-    min-height: 100vh;
-}
-
-.section {
-    padding: 15vh 0;
-    margin: 0px auto;
-    max-width: 1000px;
-}
-
-h1,
-h2,
-h3 {
-    line-height: 1.1;
-    font-weight: $font-weight-bold;
-    margin: 0px 0px 10px;
-}
-
-
-h1 {
-    color: $color-secondary
-}
-
-
-.big-heading {
-    font-size: $fz-heading;
-}
-
-.section-heading {
-    font-size: $fz-large;
-    color: $color-highlight;
-}
-
-.tagline,
-.project-overline,
-.highlight {
-    font-family: $secondary-font;
-    color: $color-highlight;
-    line-height: 1.6;
-    font-size: $fz-medium;
-}
-
-.project-overline {
-    font-size: $fz-small;
-}
-
-p {
-    line-height: 1.6;
-    font-size: $fz-small;
-}
-
-
-/* Hero */
-#hero {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-start;
-    min-height: 100vh;
-    padding: 0px;
-}
-
-.intro-text-wrapper {
-    text-align: left;
-    max-width: 540px;
-    margin-bottom: $margin-bottom
 }
 
 /* About me */
@@ -408,17 +429,19 @@ p {
     gap: 15px;
     position: relative;
     padding: 0px;
-    overflow: hidden;
 
     li {
         background-color: $background-light;
 
     }
+
+    // li:hover {
+    //     transform: translateY(-10px);
+    // }
 }
 
 .project-inner {
     display: flex;
-    //justify-content: space-between;
     flex-direction: column;
     align-items: flex-start;
     position: relative;
@@ -499,7 +522,7 @@ footer {
 
     .project-image {
         margin: 50px auto;
-        width: 70%;
+        width: 80%;
     }
 }
 
